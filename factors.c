@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdint.h>
 #include <unistd.h>
 
 /**
@@ -9,15 +10,16 @@
  *
  * Return: void
  */
-void factorize(u_int32_t n)
+void factorize(uintmax_t n)
 {
-	u_int32_t i;
+	uintmax_t i, j;
 
 	for (i = 2; i <= sqrt(n); ++i)
 	{
 		if (n % i == 0)
 		{
-			printf("%d=%d*%d\n", n, n / i, i);
+			j = n / i;
+			printf("%ld=%ld*%ld\n", n, j, i);
 			return;
 		}
 	}
@@ -36,7 +38,7 @@ int main(int argc, char **argv)
 	FILE *file;
 	size_t len;
 	char *buff = NULL;
-	u_int32_t num;
+	uintmax_t num;
 
 	if (argc != 2)
 	{
