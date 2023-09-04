@@ -12,7 +12,7 @@
  */
 void factorize(uintmax_t n)
 {
-	uintmax_t i, j;
+	u_int32_t i, j;
 
 	for (i = 2; i <= sqrt(n); ++i)
 	{
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	FILE *file;
 	size_t len;
 	char *buff = NULL;
-	uintmax_t num;
+	u_int32_t num;
 
 	if (argc != 2)
 	{
